@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2FF526FEDCB12CC4D61ACC56 /* libPods-Comobot_wifi_demo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AF2F23DC6D33A5E8BA7D36A2 /* libPods-Comobot_wifi_demo.a */; };
 		5A7601041EFA099200ADFCAB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7601031EFA099200ADFCAB /* main.m */; };
 		5A7601071EFA099200ADFCAB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7601061EFA099200ADFCAB /* AppDelegate.m */; };
 		5A76010A1EFA099200ADFCAB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7601091EFA099200ADFCAB /* ViewController.m */; };
@@ -15,6 +16,8 @@
 		5A7601121EFA099200ADFCAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A7601101EFA099200ADFCAB /* LaunchScreen.storyboard */; };
 		5A76011D1EFA099200ADFCAB /* Comobot_wifi_demoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A76011C1EFA099200ADFCAB /* Comobot_wifi_demoTests.m */; };
 		5A7601281EFA099200ADFCAB /* Comobot_wifi_demoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7601271EFA099200ADFCAB /* Comobot_wifi_demoUITests.m */; };
+		5A7601421EFA106000ADFCAB /* AlertC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7601401EFA106000ADFCAB /* AlertC.m */; };
+		5A7601431EFA106000ADFCAB /* AlertC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A7601411EFA106000ADFCAB /* AlertC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2DABDA75D7D94B46386273F8 /* Pods-Comobot_wifi_demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Comobot_wifi_demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Comobot_wifi_demo/Pods-Comobot_wifi_demo.release.xcconfig"; sourceTree = "<group>"; };
 		5A7600FF1EFA099200ADFCAB /* Comobot_wifi_demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Comobot_wifi_demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A7601031EFA099200ADFCAB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5A7601051EFA099200ADFCAB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -51,6 +55,11 @@
 		5A7601231EFA099200ADFCAB /* Comobot_wifi_demoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Comobot_wifi_demoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A7601271EFA099200ADFCAB /* Comobot_wifi_demoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Comobot_wifi_demoUITests.m; sourceTree = "<group>"; };
 		5A7601291EFA099200ADFCAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A76013F1EFA106000ADFCAB /* AlertC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertC.h; sourceTree = "<group>"; };
+		5A7601401EFA106000ADFCAB /* AlertC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertC.m; sourceTree = "<group>"; };
+		5A7601411EFA106000ADFCAB /* AlertC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlertC.xib; sourceTree = "<group>"; };
+		775D8A4CD832FE73E007E735 /* Pods-Comobot_wifi_demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Comobot_wifi_demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Comobot_wifi_demo/Pods-Comobot_wifi_demo.debug.xcconfig"; sourceTree = "<group>"; };
+		AF2F23DC6D33A5E8BA7D36A2 /* libPods-Comobot_wifi_demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Comobot_wifi_demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FF526FEDCB12CC4D61ACC56 /* libPods-Comobot_wifi_demo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +88,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		410A797B5E246751EF240F0D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				775D8A4CD832FE73E007E735 /* Pods-Comobot_wifi_demo.debug.xcconfig */,
+				2DABDA75D7D94B46386273F8 /* Pods-Comobot_wifi_demo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		5A7600F61EFA099200ADFCAB = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +104,8 @@
 				5A76011B1EFA099200ADFCAB /* Comobot_wifi_demoTests */,
 				5A7601261EFA099200ADFCAB /* Comobot_wifi_demoUITests */,
 				5A7601001EFA099200ADFCAB /* Products */,
+				410A797B5E246751EF240F0D /* Pods */,
+				7C1D73942EECC12F595940A7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,6 +126,9 @@
 				5A7601061EFA099200ADFCAB /* AppDelegate.m */,
 				5A7601081EFA099200ADFCAB /* ViewController.h */,
 				5A7601091EFA099200ADFCAB /* ViewController.m */,
+				5A76013F1EFA106000ADFCAB /* AlertC.h */,
+				5A7601401EFA106000ADFCAB /* AlertC.m */,
+				5A7601411EFA106000ADFCAB /* AlertC.xib */,
 				5A76010B1EFA099200ADFCAB /* Main.storyboard */,
 				5A76010E1EFA099200ADFCAB /* Assets.xcassets */,
 				5A7601101EFA099200ADFCAB /* LaunchScreen.storyboard */,
@@ -140,6 +164,14 @@
 			path = Comobot_wifi_demoUITests;
 			sourceTree = "<group>";
 		};
+		7C1D73942EECC12F595940A7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AF2F23DC6D33A5E8BA7D36A2 /* libPods-Comobot_wifi_demo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,9 +179,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5A76012C1EFA099200ADFCAB /* Build configuration list for PBXNativeTarget "Comobot_wifi_demo" */;
 			buildPhases = (
+				18969AD39095E44B048B1AE8 /* [CP] Check Pods Manifest.lock */,
 				5A7600FB1EFA099200ADFCAB /* Sources */,
 				5A7600FC1EFA099200ADFCAB /* Frameworks */,
 				5A7600FD1EFA099200ADFCAB /* Resources */,
+				8A1EEC60F9977C05491DCA9B /* [CP] Embed Pods Frameworks */,
+				F9807AAF6A99B466727E8B63 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -251,6 +286,7 @@
 			files = (
 				5A7601121EFA099200ADFCAB /* LaunchScreen.storyboard in Resources */,
 				5A76010F1EFA099200ADFCAB /* Assets.xcassets in Resources */,
+				5A7601431EFA106000ADFCAB /* AlertC.xib in Resources */,
 				5A76010D1EFA099200ADFCAB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -271,6 +307,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		18969AD39095E44B048B1AE8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8A1EEC60F9977C05491DCA9B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Comobot_wifi_demo/Pods-Comobot_wifi_demo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F9807AAF6A99B466727E8B63 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Comobot_wifi_demo/Pods-Comobot_wifi_demo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5A7600FB1EFA099200ADFCAB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -278,6 +362,7 @@
 			files = (
 				5A76010A1EFA099200ADFCAB /* ViewController.m in Sources */,
 				5A7601071EFA099200ADFCAB /* AppDelegate.m in Sources */,
+				5A7601421EFA106000ADFCAB /* AlertC.m in Sources */,
 				5A7601041EFA099200ADFCAB /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -423,6 +508,7 @@
 		};
 		5A76012D1EFA099200ADFCAB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 775D8A4CD832FE73E007E735 /* Pods-Comobot_wifi_demo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = YD2EDN9H58;
@@ -435,6 +521,7 @@
 		};
 		5A76012E1EFA099200ADFCAB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2DABDA75D7D94B46386273F8 /* Pods-Comobot_wifi_demo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = YD2EDN9H58;
@@ -514,6 +601,7 @@
 				5A76012E1EFA099200ADFCAB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5A76012F1EFA099200ADFCAB /* Build configuration list for PBXNativeTarget "Comobot_wifi_demoTests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +610,7 @@
 				5A7601311EFA099200ADFCAB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5A7601321EFA099200ADFCAB /* Build configuration list for PBXNativeTarget "Comobot_wifi_demoUITests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +619,7 @@
 				5A7601341EFA099200ADFCAB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
