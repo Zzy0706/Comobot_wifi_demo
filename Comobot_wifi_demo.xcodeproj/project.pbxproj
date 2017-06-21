@@ -1,0 +1,537 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5A7601041EFA099200ADFCAB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7601031EFA099200ADFCAB /* main.m */; };
+		5A7601071EFA099200ADFCAB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7601061EFA099200ADFCAB /* AppDelegate.m */; };
+		5A76010A1EFA099200ADFCAB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7601091EFA099200ADFCAB /* ViewController.m */; };
+		5A76010D1EFA099200ADFCAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A76010B1EFA099200ADFCAB /* Main.storyboard */; };
+		5A76010F1EFA099200ADFCAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A76010E1EFA099200ADFCAB /* Assets.xcassets */; };
+		5A7601121EFA099200ADFCAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A7601101EFA099200ADFCAB /* LaunchScreen.storyboard */; };
+		5A76011D1EFA099200ADFCAB /* Comobot_wifi_demoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A76011C1EFA099200ADFCAB /* Comobot_wifi_demoTests.m */; };
+		5A7601281EFA099200ADFCAB /* Comobot_wifi_demoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7601271EFA099200ADFCAB /* Comobot_wifi_demoUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5A7601191EFA099200ADFCAB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5A7600F71EFA099200ADFCAB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5A7600FE1EFA099200ADFCAB;
+			remoteInfo = Comobot_wifi_demo;
+		};
+		5A7601241EFA099200ADFCAB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5A7600F71EFA099200ADFCAB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5A7600FE1EFA099200ADFCAB;
+			remoteInfo = Comobot_wifi_demo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5A7600FF1EFA099200ADFCAB /* Comobot_wifi_demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Comobot_wifi_demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A7601031EFA099200ADFCAB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5A7601051EFA099200ADFCAB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		5A7601061EFA099200ADFCAB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		5A7601081EFA099200ADFCAB /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		5A7601091EFA099200ADFCAB /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		5A76010C1EFA099200ADFCAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5A76010E1EFA099200ADFCAB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5A7601111EFA099200ADFCAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5A7601131EFA099200ADFCAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A7601181EFA099200ADFCAB /* Comobot_wifi_demoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Comobot_wifi_demoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A76011C1EFA099200ADFCAB /* Comobot_wifi_demoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Comobot_wifi_demoTests.m; sourceTree = "<group>"; };
+		5A76011E1EFA099200ADFCAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A7601231EFA099200ADFCAB /* Comobot_wifi_demoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Comobot_wifi_demoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A7601271EFA099200ADFCAB /* Comobot_wifi_demoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Comobot_wifi_demoUITests.m; sourceTree = "<group>"; };
+		5A7601291EFA099200ADFCAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5A7600FC1EFA099200ADFCAB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A7601151EFA099200ADFCAB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A7601201EFA099200ADFCAB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5A7600F61EFA099200ADFCAB = {
+			isa = PBXGroup;
+			children = (
+				5A7601011EFA099200ADFCAB /* Comobot_wifi_demo */,
+				5A76011B1EFA099200ADFCAB /* Comobot_wifi_demoTests */,
+				5A7601261EFA099200ADFCAB /* Comobot_wifi_demoUITests */,
+				5A7601001EFA099200ADFCAB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5A7601001EFA099200ADFCAB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5A7600FF1EFA099200ADFCAB /* Comobot_wifi_demo.app */,
+				5A7601181EFA099200ADFCAB /* Comobot_wifi_demoTests.xctest */,
+				5A7601231EFA099200ADFCAB /* Comobot_wifi_demoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5A7601011EFA099200ADFCAB /* Comobot_wifi_demo */ = {
+			isa = PBXGroup;
+			children = (
+				5A7601051EFA099200ADFCAB /* AppDelegate.h */,
+				5A7601061EFA099200ADFCAB /* AppDelegate.m */,
+				5A7601081EFA099200ADFCAB /* ViewController.h */,
+				5A7601091EFA099200ADFCAB /* ViewController.m */,
+				5A76010B1EFA099200ADFCAB /* Main.storyboard */,
+				5A76010E1EFA099200ADFCAB /* Assets.xcassets */,
+				5A7601101EFA099200ADFCAB /* LaunchScreen.storyboard */,
+				5A7601131EFA099200ADFCAB /* Info.plist */,
+				5A7601021EFA099200ADFCAB /* Supporting Files */,
+			);
+			path = Comobot_wifi_demo;
+			sourceTree = "<group>";
+		};
+		5A7601021EFA099200ADFCAB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5A7601031EFA099200ADFCAB /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5A76011B1EFA099200ADFCAB /* Comobot_wifi_demoTests */ = {
+			isa = PBXGroup;
+			children = (
+				5A76011C1EFA099200ADFCAB /* Comobot_wifi_demoTests.m */,
+				5A76011E1EFA099200ADFCAB /* Info.plist */,
+			);
+			path = Comobot_wifi_demoTests;
+			sourceTree = "<group>";
+		};
+		5A7601261EFA099200ADFCAB /* Comobot_wifi_demoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5A7601271EFA099200ADFCAB /* Comobot_wifi_demoUITests.m */,
+				5A7601291EFA099200ADFCAB /* Info.plist */,
+			);
+			path = Comobot_wifi_demoUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5A7600FE1EFA099200ADFCAB /* Comobot_wifi_demo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5A76012C1EFA099200ADFCAB /* Build configuration list for PBXNativeTarget "Comobot_wifi_demo" */;
+			buildPhases = (
+				5A7600FB1EFA099200ADFCAB /* Sources */,
+				5A7600FC1EFA099200ADFCAB /* Frameworks */,
+				5A7600FD1EFA099200ADFCAB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Comobot_wifi_demo;
+			productName = Comobot_wifi_demo;
+			productReference = 5A7600FF1EFA099200ADFCAB /* Comobot_wifi_demo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5A7601171EFA099200ADFCAB /* Comobot_wifi_demoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5A76012F1EFA099200ADFCAB /* Build configuration list for PBXNativeTarget "Comobot_wifi_demoTests" */;
+			buildPhases = (
+				5A7601141EFA099200ADFCAB /* Sources */,
+				5A7601151EFA099200ADFCAB /* Frameworks */,
+				5A7601161EFA099200ADFCAB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5A76011A1EFA099200ADFCAB /* PBXTargetDependency */,
+			);
+			name = Comobot_wifi_demoTests;
+			productName = Comobot_wifi_demoTests;
+			productReference = 5A7601181EFA099200ADFCAB /* Comobot_wifi_demoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5A7601221EFA099200ADFCAB /* Comobot_wifi_demoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5A7601321EFA099200ADFCAB /* Build configuration list for PBXNativeTarget "Comobot_wifi_demoUITests" */;
+			buildPhases = (
+				5A76011F1EFA099200ADFCAB /* Sources */,
+				5A7601201EFA099200ADFCAB /* Frameworks */,
+				5A7601211EFA099200ADFCAB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5A7601251EFA099200ADFCAB /* PBXTargetDependency */,
+			);
+			name = Comobot_wifi_demoUITests;
+			productName = Comobot_wifi_demoUITests;
+			productReference = 5A7601231EFA099200ADFCAB /* Comobot_wifi_demoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5A7600F71EFA099200ADFCAB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = com.comobd.io;
+				TargetAttributes = {
+					5A7600FE1EFA099200ADFCAB = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = YD2EDN9H58;
+						ProvisioningStyle = Automatic;
+					};
+					5A7601171EFA099200ADFCAB = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = YD2EDN9H58;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 5A7600FE1EFA099200ADFCAB;
+					};
+					5A7601221EFA099200ADFCAB = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = YD2EDN9H58;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 5A7600FE1EFA099200ADFCAB;
+					};
+				};
+			};
+			buildConfigurationList = 5A7600FA1EFA099200ADFCAB /* Build configuration list for PBXProject "Comobot_wifi_demo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5A7600F61EFA099200ADFCAB;
+			productRefGroup = 5A7601001EFA099200ADFCAB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5A7600FE1EFA099200ADFCAB /* Comobot_wifi_demo */,
+				5A7601171EFA099200ADFCAB /* Comobot_wifi_demoTests */,
+				5A7601221EFA099200ADFCAB /* Comobot_wifi_demoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5A7600FD1EFA099200ADFCAB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A7601121EFA099200ADFCAB /* LaunchScreen.storyboard in Resources */,
+				5A76010F1EFA099200ADFCAB /* Assets.xcassets in Resources */,
+				5A76010D1EFA099200ADFCAB /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A7601161EFA099200ADFCAB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A7601211EFA099200ADFCAB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5A7600FB1EFA099200ADFCAB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A76010A1EFA099200ADFCAB /* ViewController.m in Sources */,
+				5A7601071EFA099200ADFCAB /* AppDelegate.m in Sources */,
+				5A7601041EFA099200ADFCAB /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A7601141EFA099200ADFCAB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A76011D1EFA099200ADFCAB /* Comobot_wifi_demoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A76011F1EFA099200ADFCAB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A7601281EFA099200ADFCAB /* Comobot_wifi_demoUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5A76011A1EFA099200ADFCAB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5A7600FE1EFA099200ADFCAB /* Comobot_wifi_demo */;
+			targetProxy = 5A7601191EFA099200ADFCAB /* PBXContainerItemProxy */;
+		};
+		5A7601251EFA099200ADFCAB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5A7600FE1EFA099200ADFCAB /* Comobot_wifi_demo */;
+			targetProxy = 5A7601241EFA099200ADFCAB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5A76010B1EFA099200ADFCAB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5A76010C1EFA099200ADFCAB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5A7601101EFA099200ADFCAB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5A7601111EFA099200ADFCAB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5A76012A1EFA099200ADFCAB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		5A76012B1EFA099200ADFCAB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5A76012D1EFA099200ADFCAB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = YD2EDN9H58;
+				INFOPLIST_FILE = Comobot_wifi_demo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.comobd.io.Comobot-wifi-demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		5A76012E1EFA099200ADFCAB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = YD2EDN9H58;
+				INFOPLIST_FILE = Comobot_wifi_demo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.comobd.io.Comobot-wifi-demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		5A7601301EFA099200ADFCAB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = YD2EDN9H58;
+				INFOPLIST_FILE = Comobot_wifi_demoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.comobd.io.Comobot-wifi-demoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Comobot_wifi_demo.app/Comobot_wifi_demo";
+			};
+			name = Debug;
+		};
+		5A7601311EFA099200ADFCAB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = YD2EDN9H58;
+				INFOPLIST_FILE = Comobot_wifi_demoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.comobd.io.Comobot-wifi-demoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Comobot_wifi_demo.app/Comobot_wifi_demo";
+			};
+			name = Release;
+		};
+		5A7601331EFA099200ADFCAB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = YD2EDN9H58;
+				INFOPLIST_FILE = Comobot_wifi_demoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.comobd.io.Comobot-wifi-demoUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Comobot_wifi_demo;
+			};
+			name = Debug;
+		};
+		5A7601341EFA099200ADFCAB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = YD2EDN9H58;
+				INFOPLIST_FILE = Comobot_wifi_demoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.comobd.io.Comobot-wifi-demoUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Comobot_wifi_demo;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5A7600FA1EFA099200ADFCAB /* Build configuration list for PBXProject "Comobot_wifi_demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A76012A1EFA099200ADFCAB /* Debug */,
+				5A76012B1EFA099200ADFCAB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5A76012C1EFA099200ADFCAB /* Build configuration list for PBXNativeTarget "Comobot_wifi_demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A76012D1EFA099200ADFCAB /* Debug */,
+				5A76012E1EFA099200ADFCAB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		5A76012F1EFA099200ADFCAB /* Build configuration list for PBXNativeTarget "Comobot_wifi_demoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A7601301EFA099200ADFCAB /* Debug */,
+				5A7601311EFA099200ADFCAB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		5A7601321EFA099200ADFCAB /* Build configuration list for PBXNativeTarget "Comobot_wifi_demoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A7601331EFA099200ADFCAB /* Debug */,
+				5A7601341EFA099200ADFCAB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5A7600F71EFA099200ADFCAB /* Project object */;
+}
