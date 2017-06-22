@@ -8,7 +8,6 @@
 
 #import "ViewController.h"
 #import "Masonry.h"
-#import "AlertC.h"
 @interface ViewController ()<UIPickerViewDelegate,UIPickerViewDataSource>{
     NSArray * letter;
     NSString *pickStr;
@@ -19,16 +18,18 @@
 @implementation ViewController
 -(void)viewDidLayoutSubviews
 {
-    self.myScrollView.contentSize = CGSizeMake(300,1000);
+    self.myScrollView.contentSize = CGSizeMake(300,1080);
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+
     pickStr = [[NSString alloc]init];
     [self.myScrollView setBackgroundColor:[UIColor blackColor]];
     [self creatText];
     letter = @[@"km",@"m"];
 }
 -(void)creatText{
+        CGRect r = [ UIScreen mainScreen ].bounds;
      UITextField *textF1 = [[UITextField alloc]init];
      UITextField *textF2 = [[UITextField alloc]init];
      UITextField *textF3 = [[UITextField alloc]init];
@@ -85,52 +86,52 @@
     [textF1 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.myScrollView);
         make.top.equalTo(self.myScrollView).with.offset(15);
-        make.size.mas_equalTo(CGSizeMake(376, 59));
+        make.size.mas_equalTo(CGSizeMake(r.size.width, 59));
     }];
     [textF2 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.myScrollView);
         make.top.equalTo(textF1.mas_bottom).with.offset(15);
-        make.size.mas_equalTo(CGSizeMake(376, 59));
+        make.size.mas_equalTo(CGSizeMake(r.size.width, 59));
     }];
     [textF3 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.myScrollView);
         make.top.equalTo(textF2.mas_bottom).with.offset(15);
-        make.size.mas_equalTo(CGSizeMake(376, 59));
+        make.size.mas_equalTo(CGSizeMake(r.size.width, 59));
     }];
     [textF4 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.myScrollView);
         make.top.equalTo(textF3.mas_bottom).with.offset(15);
-        make.size.mas_equalTo(CGSizeMake(376, 59));
+        make.size.mas_equalTo(CGSizeMake(r.size.width, 59));
     }];
     [textF5 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.myScrollView);
         make.top.equalTo(textF4.mas_bottom).with.offset(15);
-        make.size.mas_equalTo(CGSizeMake(376, 59));
+        make.size.mas_equalTo(CGSizeMake(r.size.width, 59));
     }];
     [textF6 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.myScrollView);
         make.top.equalTo(textF5.mas_bottom).with.offset(15);
-        make.size.mas_equalTo(CGSizeMake(376, 59));
+        make.size.mas_equalTo(CGSizeMake(r.size.width, 59));
     }];
     [textF7 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.myScrollView);
         make.top.equalTo(textF6.mas_bottom).with.offset(15);
-        make.size.mas_equalTo(CGSizeMake(376, 59));
+        make.size.mas_equalTo(CGSizeMake(r.size.width, 59));
     }];
     [textF8 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.myScrollView);
         make.top.equalTo(textF7.mas_bottom).with.offset(15);
-        make.size.mas_equalTo(CGSizeMake(376, 300));
+        make.size.mas_equalTo(CGSizeMake(r.size.width, 300));
     }];
     [textF9 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.myScrollView);
         make.top.equalTo(textF8.mas_bottom).with.offset(15);
-        make.size.mas_equalTo(CGSizeMake(376, 59));
+        make.size.mas_equalTo(CGSizeMake(r.size.width, 59));
     }];
     [textF10 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.myScrollView);
         make.top.equalTo(textF9.mas_bottom).with.offset(15);
-        make.size.mas_equalTo(CGSizeMake(376, 59));
+        make.size.mas_equalTo(CGSizeMake(r.size.width, 59));
     }];
 
 }

@@ -16,8 +16,6 @@
 		5A7601121EFA099200ADFCAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A7601101EFA099200ADFCAB /* LaunchScreen.storyboard */; };
 		5A76011D1EFA099200ADFCAB /* Comobot_wifi_demoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A76011C1EFA099200ADFCAB /* Comobot_wifi_demoTests.m */; };
 		5A7601281EFA099200ADFCAB /* Comobot_wifi_demoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7601271EFA099200ADFCAB /* Comobot_wifi_demoUITests.m */; };
-		5A7601421EFA106000ADFCAB /* AlertC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7601401EFA106000ADFCAB /* AlertC.m */; };
-		5A7601431EFA106000ADFCAB /* AlertC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A7601411EFA106000ADFCAB /* AlertC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,9 +53,6 @@
 		5A7601231EFA099200ADFCAB /* Comobot_wifi_demoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Comobot_wifi_demoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A7601271EFA099200ADFCAB /* Comobot_wifi_demoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Comobot_wifi_demoUITests.m; sourceTree = "<group>"; };
 		5A7601291EFA099200ADFCAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5A76013F1EFA106000ADFCAB /* AlertC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertC.h; sourceTree = "<group>"; };
-		5A7601401EFA106000ADFCAB /* AlertC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertC.m; sourceTree = "<group>"; };
-		5A7601411EFA106000ADFCAB /* AlertC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlertC.xib; sourceTree = "<group>"; };
 		775D8A4CD832FE73E007E735 /* Pods-Comobot_wifi_demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Comobot_wifi_demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Comobot_wifi_demo/Pods-Comobot_wifi_demo.debug.xcconfig"; sourceTree = "<group>"; };
 		AF2F23DC6D33A5E8BA7D36A2 /* libPods-Comobot_wifi_demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Comobot_wifi_demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -126,9 +121,6 @@
 				5A7601061EFA099200ADFCAB /* AppDelegate.m */,
 				5A7601081EFA099200ADFCAB /* ViewController.h */,
 				5A7601091EFA099200ADFCAB /* ViewController.m */,
-				5A76013F1EFA106000ADFCAB /* AlertC.h */,
-				5A7601401EFA106000ADFCAB /* AlertC.m */,
-				5A7601411EFA106000ADFCAB /* AlertC.xib */,
 				5A76010B1EFA099200ADFCAB /* Main.storyboard */,
 				5A76010E1EFA099200ADFCAB /* Assets.xcassets */,
 				5A7601101EFA099200ADFCAB /* LaunchScreen.storyboard */,
@@ -286,7 +278,6 @@
 			files = (
 				5A7601121EFA099200ADFCAB /* LaunchScreen.storyboard in Resources */,
 				5A76010F1EFA099200ADFCAB /* Assets.xcassets in Resources */,
-				5A7601431EFA106000ADFCAB /* AlertC.xib in Resources */,
 				5A76010D1EFA099200ADFCAB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -362,7 +353,6 @@
 			files = (
 				5A76010A1EFA099200ADFCAB /* ViewController.m in Sources */,
 				5A7601071EFA099200ADFCAB /* AppDelegate.m in Sources */,
-				5A7601421EFA106000ADFCAB /* AlertC.m in Sources */,
 				5A7601041EFA099200ADFCAB /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
