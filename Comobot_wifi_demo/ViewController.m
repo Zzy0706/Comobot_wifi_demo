@@ -8,11 +8,13 @@
 
 #import "ViewController.h"
 #import "Masonry.h"
+#import "GCDAsyncSocket.h"
 #import <SystemConfiguration/CaptiveNetwork.h>
 #import <ifaddrs.h>
 #import <arpa/inet.h>
 #import <net/if.h>
-@interface ViewController ()<UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDelegate>{
+#define SOCKET_CMD_INIT    @"010\r\n"
+@interface ViewController ()<UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDelegate,GCDAsyncSocketDelegate>{
     NSArray * letter;
     NSString *pickStr;
     UITextField *textF;
@@ -32,11 +34,12 @@
     [self.myScrollView setBackgroundColor:[UIColor blackColor]];
     [self creatText];
     [self wifiSimple];
-    NSLog(@"%@-------%@",[self fetchWiFiName],[self getCurrentWifiIP]);
+    NSLog(@"%@-------%@",[self fetchWiFiName],[[self getCurrentWifiIP] substringToIndex:11]);
     letter = @[@"km",@"m"];
 }
+
 -(void)wifiSimple{
-    if ([self getCurrentWifiIP]) {
+    if ([[self getCurrentWifiIP] substringToIndex:11]) {
         
     }
     
@@ -210,11 +213,32 @@
     return true;
 }
 - (IBAction)startNow:(UIButton *)sender {
+    NSLog(@"%@-------%@",[self fetchWiFiName],[[self getCurrentWifiIP] substringToIndex:11]);
+    self.clinetSocket= [[GCDAsyncSocket alloc]initWithDelegate:self delegateQueue:dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,0)];
+    [self.clinetSocket connectToHost:@"192.168.43.1" onPort:9900 withTimeout:-1 error:nil];
 }
-
+- (void)socket:(GCDAsyncSocket*)sock didConnectToHost:(NSString*)host port:(uint16_t)port{
+    NSLog(@"成功");
+    NSString *cmd =  SOCKET_CMD_INIT;
+    NSData *data = [cmd dataUsingEncoding:NSUTF8StringEncoding];
+    [self.clinetSocket writeData:data withTimeout:-1 tag:10];
+    [self.clinetSocket readDataWithTimeout:-1 tag:10];
+}
+- (void)socket:(GCDAsyncSocket*)sock didReadData:(NSData*)data withTag:(long)tag{
+    NSString *text = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+    NSLog(@"%@",text);
+     [self.clinetSocket readDataWithTimeout:-1 tag:10];
+}
 - (IBAction)stopNow:(UIButton *)sender {
+    
 }
-
+- (void)socketDidDisconnect:(GCDAsyncSocket *)sock withError:(nullable NSError *)err;{
+    if (err) {
+        NSLog(@"错了！！！！错了！！！:%@",err);
+    }else{
+        NSLog(@"断开咯~~~~~~~");
+    }
+}
 - (IBAction)settingS:(UIButton *)sender {
     UIAlertController *alerC = [UIAlertController alertControllerWithTitle:@"Please settings" message:@"\n\n\n\n\n\n\n\n\n" preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:nil];

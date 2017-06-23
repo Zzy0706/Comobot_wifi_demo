@@ -7,13 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "GCDAsyncSocket.h"
 @interface ViewController : UIViewController
 - (IBAction)startNow:(UIButton *)sender;
 - (IBAction)stopNow:(UIButton *)sender;
 - (IBAction)settingS:(UIButton *)sender;
 @property (weak, nonatomic) IBOutlet UIScrollView *myScrollView;
-
+@property(nonatomic)GCDAsyncSocket* clinetSocket;
 
 @end
 
