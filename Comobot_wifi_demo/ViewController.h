@@ -14,6 +14,6 @@
 - (IBAction)settingS:(UIButton *)sender;
 @property (weak, nonatomic) IBOutlet UIScrollView *myScrollView;
 @property(nonatomic)GCDAsyncSocket* clinetSocket;
-
+@property(nonatomic,strong)NSThread *thread;
 @end
 

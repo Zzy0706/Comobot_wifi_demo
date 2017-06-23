@@ -9,11 +9,11 @@
 #import "ViewController.h"
 #import "Masonry.h"
 #import "GCDAsyncSocket.h"
-#import <SystemConfiguration/CaptiveNetwork.h>
 #import <ifaddrs.h>
 #import <arpa/inet.h>
 #import <net/if.h>
 #define SOCKET_CMD_INIT    @"010\r\n"
+#define SOCKET_CMD_KEEP    @"ping\r\n"
 @interface ViewController ()<UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDelegate,GCDAsyncSocketDelegate>{
     NSArray * letter;
     NSString *pickStr;
@@ -27,23 +27,28 @@
 {
     self.myScrollView.contentSize = CGSizeMake(300,1080);
 }
+-(NSThread *)thread{
+    if (!_thread) {
+        _thread = [[NSThread alloc]initWithTarget:self selector:@selector(threadStart) object:nil];
+    }
+    return _thread;
+}
+-(void)threadStart{
+    @autoreleasepool {
+        [NSTimer scheduledTimerWithTimeInterval:10.0 target:self selector:@selector(heartBeat) userInfo:nil repeats:YES];
+        [[NSRunLoop currentRunLoop]run];
+    }
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     pickStr = [[NSString alloc]init];
     [self.myScrollView setBackgroundColor:[UIColor blackColor]];
     [self creatText];
-    [self wifiSimple];
-    NSLog(@"%@-------%@",[self fetchWiFiName],[[self getCurrentWifiIP] substringToIndex:11]);
+    NSLog(@"%@",[[self getCurrentWifiIP] substringToIndex:11]);
     letter = @[@"km",@"m"];
 }
-
--(void)wifiSimple{
-    if ([[self getCurrentWifiIP] substringToIndex:11]) {
-        
-    }
-    
-}
+#pragma mark 获取WIFI IP
 -(NSString*)getCurrentWifiIP
 {
     NSString *address = nil;
@@ -70,26 +75,6 @@
     freeifaddrs(interfaces);
     return address;
 }
-- (NSString *)fetchWiFiName {
-    NSArray *ifs = (__bridge_transfer NSArray *)CNCopySupportedInterfaces();
-    if (!ifs) {
-        NSLog(@"没有没有，什么都没有");
-        return nil;
-    }
-    NSString *WiFiName = nil;
-    for (NSString *ifnam in ifs) {
-        NSDictionary *info = (__bridge_transfer NSDictionary *)CNCopyCurrentNetworkInfo((__bridge CFStringRef)ifnam);
-        if (info && [info count]) {
-            // 这里其实对应的有三个key:kCNNetworkInfoKeySSID、kCNNetworkInfoKeyBSSID、kCNNetworkInfoKeySSIDData，
-            // 不过它们都是CFStringRef类型的
-            WiFiName = [info objectForKey:(__bridge NSString *)kCNNetworkInfoKeyBSSID];
-            //            WiFiName = [info objectForKey:@"SSID"];
-            break;
-        }
-    }
-    return WiFiName;
-}
-
 
 
 
@@ -213,15 +198,27 @@
     return true;
 }
 - (IBAction)startNow:(UIButton *)sender {
-    NSLog(@"%@-------%@",[self fetchWiFiName],[[self getCurrentWifiIP] substringToIndex:11]);
+    
+    NSLog(@"-------%@",[[self getCurrentWifiIP] substringToIndex:11]);
     self.clinetSocket= [[GCDAsyncSocket alloc]initWithDelegate:self delegateQueue:dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,0)];
-    [self.clinetSocket connectToHost:@"192.168.43.1" onPort:9900 withTimeout:-1 error:nil];
+    if ([[[self getCurrentWifiIP] substringToIndex:10] isEqualToString:@"192.168.43"]) {
+         [self.clinetSocket connectToHost:@"192.168.43.1" onPort:9900 withTimeout:-1 error:nil];
+    }else{
+        NSLog(@"未连接程序热点！！！");
+    }
+   
+}
+-(void)heartBeat{
+    [self.clinetSocket writeData:[self Data:SOCKET_CMD_KEEP] withTimeout:-1 tag:127];
+}
+-(NSData *)Data:(NSString *)str{
+    NSData *data = [str dataUsingEncoding:NSUTF8StringEncoding];
+    return data;
 }
 - (void)socket:(GCDAsyncSocket*)sock didConnectToHost:(NSString*)host port:(uint16_t)port{
     NSLog(@"成功");
-    NSString *cmd =  SOCKET_CMD_INIT;
-    NSData *data = [cmd dataUsingEncoding:NSUTF8StringEncoding];
-    [self.clinetSocket writeData:data withTimeout:-1 tag:10];
+    [self.clinetSocket writeData:[self Data:SOCKET_CMD_INIT] withTimeout:-1 tag:10];
+    [self.thread start];
     [self.clinetSocket readDataWithTimeout:-1 tag:10];
 }
 - (void)socket:(GCDAsyncSocket*)sock didReadData:(NSData*)data withTag:(long)tag{
@@ -231,10 +228,11 @@
 }
 - (IBAction)stopNow:(UIButton *)sender {
     
+    
 }
 - (void)socketDidDisconnect:(GCDAsyncSocket *)sock withError:(nullable NSError *)err;{
     if (err) {
-        NSLog(@"错了！！！！错了！！！:%@",err);
+        NSLog(@"出错了！！！！出错了！！！:%@",err);
     }else{
         NSLog(@"断开咯~~~~~~~");
     }
