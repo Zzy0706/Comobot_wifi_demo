@@ -8,9 +8,11 @@
 
 #import "ViewController.h"
 #import "Masonry.h"
-@interface ViewController ()<UIPickerViewDelegate,UIPickerViewDataSource>{
+#import <SystemConfiguration/CaptiveNetwork.h>
+@interface ViewController ()<UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDelegate>{
     NSArray * letter;
     NSString *pickStr;
+    UITextField *textF;
 }
 
 @end
@@ -22,14 +24,46 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
     pickStr = [[NSString alloc]init];
     [self.myScrollView setBackgroundColor:[UIColor blackColor]];
     [self creatText];
+    [self wifiSimple];
+    [self fetchWiFiName];
     letter = @[@"km",@"m"];
 }
+-(void)wifiSimple{
+
+    
+}
+
+- (NSString *)fetchWiFiName {
+    NSArray *ifs = (__bridge_transfer NSArray *)CNCopySupportedInterfaces();
+    if (!ifs) {
+        NSLog(@"没有没有，什么都没有");
+        return nil;
+    }
+    NSString *WiFiName = nil;
+    for (NSString *ifnam in ifs) {
+        NSDictionary *info = (__bridge_transfer NSDictionary *)CNCopyCurrentNetworkInfo((__bridge CFStringRef)ifnam);
+        if (info && [info count]) {
+            // 这里其实对应的有三个key:kCNNetworkInfoKeySSID、kCNNetworkInfoKeyBSSID、kCNNetworkInfoKeySSIDData，
+            // 不过它们都是CFStringRef类型的
+            WiFiName = [info objectForKey:(__bridge NSString *)kCNNetworkInfoKeySSID];
+            //            WiFiName = [info objectForKey:@"SSID"];
+            break;
+        }
+    }
+    return WiFiName;
+}
+
+
+
+
+
+
 -(void)creatText{
-        CGRect r = [ UIScreen mainScreen ].bounds;
+     CGRect r = [ UIScreen mainScreen ].bounds;
      UITextField *textF1 = [[UITextField alloc]init];
      UITextField *textF2 = [[UITextField alloc]init];
      UITextField *textF3 = [[UITextField alloc]init];
@@ -140,8 +174,11 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textF resignFirstResponder];
+    return true;
+}
 - (IBAction)startNow:(UIButton *)sender {
 }
 
@@ -173,8 +210,10 @@
     UILabel *label2 = [[UILabel alloc]init];
     [label2 setText:@"Odmeter    >"];
     [alerC.view addSubview:label2];
-    UITextField *textF = [[UITextField alloc]init];
+    textF = [[UITextField alloc]init];
+    textF.delegate = self;
     [alerC.view addSubview:textF];
+
     [label2 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(100, 100));
         make.top.mas_equalTo(alerC.view).with.offset(100);
@@ -185,6 +224,7 @@
         make.bottom.mas_equalTo(pickerView).with.offset(10);
         make.left.equalTo(alerC.view).with.offset(160);
     }];
+    
     textF.borderStyle = UITextBorderStyleLine;
     //添加确定到UIAlertController中
     UIAlertAction *OKAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
