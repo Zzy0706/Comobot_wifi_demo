@@ -9,6 +9,9 @@
 #import "ViewController.h"
 #import "Masonry.h"
 #import <SystemConfiguration/CaptiveNetwork.h>
+#import <ifaddrs.h>
+#import <arpa/inet.h>
+#import <net/if.h>
 @interface ViewController ()<UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDelegate>{
     NSArray * letter;
     NSString *pickStr;
@@ -29,14 +32,41 @@
     [self.myScrollView setBackgroundColor:[UIColor blackColor]];
     [self creatText];
     [self wifiSimple];
-    [self fetchWiFiName];
+    NSLog(@"%@-------%@",[self fetchWiFiName],[self getCurrentWifiIP]);
     letter = @[@"km",@"m"];
 }
 -(void)wifiSimple{
-
+    if ([self getCurrentWifiIP]) {
+        
+    }
     
 }
-
+-(NSString*)getCurrentWifiIP
+{
+    NSString *address = nil;
+    struct ifaddrs *interfaces = NULL;
+    struct ifaddrs *temp_addr = NULL;
+    int success = 0;
+    
+    success = getifaddrs(&interfaces);
+    if (success == 0) {
+      
+        temp_addr = interfaces;
+        while(temp_addr != NULL) {
+            if(temp_addr->ifa_addr->sa_family == AF_INET) {
+     
+                if([[NSString stringWithUTF8String:temp_addr->ifa_name] isEqualToString:@"en0"]) {
+                   
+                    address = [NSString stringWithUTF8String:inet_ntoa(((struct sockaddr_in *)temp_addr->ifa_addr)->sin_addr)];
+                }
+            }
+            temp_addr = temp_addr->ifa_next;
+        }
+    }
+    // Free memory
+    freeifaddrs(interfaces);
+    return address;
+}
 - (NSString *)fetchWiFiName {
     NSArray *ifs = (__bridge_transfer NSArray *)CNCopySupportedInterfaces();
     if (!ifs) {
@@ -49,7 +79,7 @@
         if (info && [info count]) {
             // 这里其实对应的有三个key:kCNNetworkInfoKeySSID、kCNNetworkInfoKeyBSSID、kCNNetworkInfoKeySSIDData，
             // 不过它们都是CFStringRef类型的
-            WiFiName = [info objectForKey:(__bridge NSString *)kCNNetworkInfoKeySSID];
+            WiFiName = [info objectForKey:(__bridge NSString *)kCNNetworkInfoKeyBSSID];
             //            WiFiName = [info objectForKey:@"SSID"];
             break;
         }
