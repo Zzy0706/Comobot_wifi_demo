@@ -15,13 +15,15 @@
 #define SOCKET_CMD_INIT    @"010\r\n"
 #define SOCKET_CMD_KEEP    @"ping\r\n"
 @interface ViewController ()<UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDelegate,GCDAsyncSocketDelegate>{
+    int indexI;
     BOOL userYou;
     BOOL flameout;
+    NSString *strXh;
     NSString *timStr;
     NSUserDefaults *user;
     NSString *getTime;
     NSString *getMiles;
-    NSArray * letter;
+    NSArray  *letter;
     NSString *pickStr;
     UITextField *textF;
     UITextField *textF1;
@@ -55,6 +57,7 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    indexI = 0;
     userYou = true;
     user = [NSUserDefaults standardUserDefaults];
     [self getUserData];
@@ -141,8 +144,8 @@
     textF9.userInteractionEnabled = NO;
     textF10.userInteractionEnabled = NO;
     [textF1 setText:@"Engine powe status >"];
-    [textF2 setText:@"Miles driven > 0.7(km) 0.4(mile)"];
-    [textF3 setText:@"Engine hours > 0.7(min) "];
+    [textF2 setText:@"Miles driven > 0.0(km) 0.0(mile)"];
+    [textF3 setText:@"Engine hours > 0.0(min) "];
     [textF4 setText:@"Total engine hours > "];
     [textF5 setText:@"Engine RPM > "];
     [textF6 setText:@"Odometer > "];
@@ -249,6 +252,9 @@
             if ([arr[1] containsString:@"FLAMEOUT"]) {
                 [user setObject:timStr forKey:@"FLAMEOUT2"];
                 flameout = true;
+                NSLog(@"---------------%@---------%f",[user objectForKey:@"indexI"],indexI*[strXh floatValue]/3600);
+                indexI = 0;
+
             }
             
         }else if([str1 containsString:@"@2"]){
@@ -257,15 +263,21 @@
             });
         }else if([str1 containsString:@"@3"]){
             [self getUserData];
-            NSDictionary *dict = [self DictionFjson:arr[1]];
+             NSDictionary *dict = [self DictionFjson:arr[1]];
             dispatch_async(dispatch_get_main_queue(), ^{
+                strXh = dict[@"XH"];
+                if ([dict[@"SPD"] isEqualToString:@"0"] ) {
+                    indexI ++;
+                    NSString *strIndex = [NSString stringWithFormat:@"%d",indexI];
+                    [user setObject:strIndex forKey:@"indexI"];
+                }
                 [textF8 setText:[NSString stringWithFormat:@"OBD data >\n %@ ",arr[1]]];
             });
             [self showDataNow:dict];
         }else if([str1 containsString:@"@4"]){
-            NSDictionary *dict = [self DictionFjson:arr[1]];
+             NSDictionary *dict = [self DictionFjson:arr[1]];
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    [user setObject:dict forKey:@"FLAMEOUT"];
+                [user setObject:dict forKey:@"FLAMEOUT"];
                 });
             
         }
@@ -302,9 +314,6 @@
         float kmT = [dict[@"MILES-T"] floatValue];
         float tkmT =kmT/1000 +[getMiles floatValue];
         timStr = [NSString stringWithFormat:@"%f",tkmT];
-        
-        
-
         [textF1 setText:[NSString stringWithFormat:@"Engine powe status > Engine powe On"]];
         [textF2 setText:[NSString stringWithFormat:@"Miles driven > %.01f(km) %.01f(mile)",kmT/1000,kmT*0.000621]];
         [textF3 setText:[NSString stringWithFormat:@"Engine hours > %d(min) ",time/60]];
@@ -375,7 +384,7 @@
             [user setObject:textF.text forKey:@"FLAMEOUT2"];
         }
     dispatch_async(dispatch_get_main_queue(), ^{
-             [textF6 setText:[NSString stringWithFormat:@"Odometer > %.1f(km) %.01f(mile)",[textF.text floatValue],[textF.text floatValue]*0.621]];
+        [textF6 setText:[NSString stringWithFormat:@"Odometer > %.1f(km) %.01f(mile)",[textF.text floatValue],[textF.text floatValue]*0.621]];
         });
         
     }];
